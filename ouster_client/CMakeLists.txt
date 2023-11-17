@@ -2,7 +2,7 @@
 find_package(Eigen3 REQUIRED)
 find_package(jsoncpp REQUIRED)
 find_package(CURL REQUIRED)
-find_package(spdlog REQUIRED)
+# find_package(spdlog REQUIRED)
 
 # ==== Libraries ====
 add_library(ouster_client src/client.cpp src/types.cpp src/sensor_info.cpp src/netcompat.cpp src/lidar_scan.cpp
@@ -17,7 +17,8 @@ target_link_libraries(ouster_client
   PRIVATE
     CURL::libcurl
     jsoncpp_lib
-    spdlog::spdlog)
+    # spdlog::spdlog
+)
 target_compile_definitions(ouster_client PRIVATE EIGEN_MPL2_ONLY)
 add_library(OusterSDK::ouster_client ALIAS ouster_client)
 
